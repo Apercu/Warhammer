@@ -2,19 +2,96 @@
 Scenario
 --------
 
-0) les joueurs tapent leurs noms et je les POST des que je clique sur JOUER
+-- GAME --
 
-1) on GET init.php :
+1) on GET init.php : le serveur m'envoie :
 	- liste des joueurs
 		-> liste des vaisseaux
 			- coordonnees
 			-> liste des armes
 				- type
 
+2) debut d'un tour
 
+		le joueur :
+
+			PHASE 1
+			-------
+			- selectionne un vaisseau
+			- peut utiliser des PP pour boost, shield
+			- la liste des armes et leur PP apparait
+			- peut utiliser des PP pour armer
+			- re selectionne un vaisseau si PP dispo
 
 
 						GET (recupere data)		POST (envoie data)
 ------------------------------------------------------------------
 status					/api/init.php
 							- tableau des vaisseaux
+
+
+
+
+
+
+	ex: res = [
+		{
+			name  : 'Joueur 1',
+			ships : [
+				{
+					size    : 8,
+					position: [4, 7],
+					img     : 'ship.jpg',
+					weapons : [
+						{
+							damage : 60
+						},
+						{
+							damage : 60
+						},
+						{
+							damage : 60
+						}
+					]
+				},
+				{
+					size    : 8,
+					position: [4, 7],
+					img     : 'ship.jpg',
+					weapons : [
+						{
+							damage : 60
+						},
+						{
+							damage : 60
+						},
+						{
+							damage : 60
+						}
+					]
+				}
+			]
+		},
+		{
+			name  : 'Joueur 2',
+			ships : [
+				{
+					size    : 8,
+					position: [4, 7],
+					img     : 'ship.jpg',
+					weapons : [
+						{
+							damage : 60
+						},
+						{
+							damage : 60
+						},
+						{
+							damage : 60
+						}
+					]
+				}
+			]
+		}
+	];
+
