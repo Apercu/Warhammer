@@ -1,0 +1,14 @@
+{
+  "name": "war",
+  "version": "0.0.0",
+  "description": "Warhammer",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Apercu/Warhammer.git"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.4",
+    "grunt-contrib-compass": "^0.7.2",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}
