@@ -121,3 +121,10 @@ html, body {
 .intro .launch:hover {
   background-color: #287CE9;
 }
+
+/* line 47, ../scss/style.scss */
+.game-container {
+  background: gray;
+  width: 1500px;
+  height: 1000px;
+}

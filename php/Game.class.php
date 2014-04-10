@@ -1,7 +1,9 @@
 <?PHP
 require_once("Player.class.php");
-require_once("Hunter.class.php");
-require_once("Destroyer.class.php");
+require_once("Ship.class.php");
+//require_once("Hunter.class.php");
+//require_once("Destroyer.class.php");
+
 final Class Game
 {
 	public static $verbose = false;
@@ -17,7 +19,7 @@ final Class Game
 	public function __construct($p1, $p2)
 	{
 		$ships_p1 = array(
-			new Hunter (
+			new Destroyer (
 				0,
 				5,
 				0,
@@ -29,7 +31,7 @@ final Class Game
 				Game::EAST),
 		);
 		$ships_p2 = array(
-			new Hunter (
+			new Destroyer (
 				2,
 				140,
 				0,
@@ -57,6 +59,7 @@ final Class Game
 	private function turn()
 	{
 		while ($this->_p1->play() || $this->_p2->player())
+			;
 	}
 
 	private function resetAll()
@@ -90,16 +93,20 @@ final Class Game
 			return (file_get_contents("Game.doc.txt"));
 	}
 
-	public static function __destruct()
+	public function __destruct()
 	{
 		if (Game::$verbose == true)
 			print ("Game destructed" . PHP_EOL);
 	}
 
-	public static function __toString()
+	public function __toString()
 	{
 		if (Game::$verbose === true)
 			return "(Game $this->_p1, $this->_p2)";
+	}
+
+	public function getListShip () {
+		return $this->_listShip;
 	}
 
 }
