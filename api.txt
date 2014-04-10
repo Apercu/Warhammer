@@ -1,0 +1,20 @@
+
+Scenario
+--------
+
+0) les joueurs tapent leurs noms et je les POST des que je clique sur JOUER
+
+1) on GET init.php :
+	- liste des joueurs
+		-> liste des vaisseaux
+			- coordonnees
+			-> liste des armes
+				- type
+
+
+
+
+						GET (recupere data)		POST (envoie data)
+------------------------------------------------------------------
+status					/api/init.php
+							- tableau des vaisseaux
