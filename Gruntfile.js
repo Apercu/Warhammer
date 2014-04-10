@@ -3,11 +3,14 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		watch: {
 			options: {
-				livereload: true,
+				livereload: true
+			},
+			html: {
+				files: ['index.html', 'views/*.html']
 			},
 			css: {
 				files: ['scss/*.scss'],
-				tasks: ['compass'],
+				tasks: ['compass']
 			}
 		},
 		compass: {
