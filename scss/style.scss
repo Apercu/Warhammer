@@ -37,6 +37,8 @@ button.custom {
 	@include appearance(none);
 	border: 0;
 	color: white;
+	cursor: pointer;
+	padding: 4px 10px;
 	&:hover {
 		background-color: #287CE9;
 	}
@@ -67,6 +69,22 @@ button.custom {
 			background-color: #287CE9;
 		}
 	}
+}
+
+.north {
+	@include rotate(0deg);
+}
+
+.south {
+	@include rotate(180deg);
+}
+
+.west {
+	@include rotate(260deg);
+}
+
+.east {
+	@include rotate(90deg);
 }
 
 .game-container {

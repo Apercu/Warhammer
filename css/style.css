@@ -114,26 +114,28 @@ button.custom {
   appearance: none;
   border: 0;
   color: white;
+  cursor: pointer;
+  padding: 4px 10px;
 }
-/* line 40, ../scss/style.scss */
+/* line 42, ../scss/style.scss */
 button.custom:hover {
   background-color: #287CE9;
 }
 
-/* line 45, ../scss/style.scss */
+/* line 47, ../scss/style.scss */
 .intro {
   padding: 50px;
   margin: 0 auto;
   text-align: center;
   font-family: "Coalition";
 }
-/* line 50, ../scss/style.scss */
+/* line 52, ../scss/style.scss */
 .intro .heading {
   color: #F5F247;
   font-size: 50px;
   margin-bottom: 50px;
 }
-/* line 55, ../scss/style.scss */
+/* line 57, ../scss/style.scss */
 .intro .launch {
   height: 200px;
   background-color: #1e6bce;
@@ -156,12 +158,48 @@ button.custom:hover {
   -o-transition-duration: 100ms;
   transition-duration: 100ms;
 }
-/* line 66, ../scss/style.scss */
+/* line 68, ../scss/style.scss */
 .intro .launch:hover {
   background-color: #287CE9;
 }
 
-/* line 72, ../scss/style.scss */
+/* line 74, ../scss/style.scss */
+.north {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+/* line 78, ../scss/style.scss */
+.south {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+/* line 82, ../scss/style.scss */
+.west {
+  -webkit-transform: rotate(260deg);
+  -moz-transform: rotate(260deg);
+  -ms-transform: rotate(260deg);
+  -o-transform: rotate(260deg);
+  transform: rotate(260deg);
+}
+
+/* line 86, ../scss/style.scss */
+.east {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+/* line 90, ../scss/style.scss */
 .game-container {
   -webkit-border-radius: 4px 4px;
   -moz-border-radius: 4px / 4px;
@@ -176,11 +214,11 @@ button.custom:hover {
   right: 0;
   margin: auto;
 }
-/* line 83, ../scss/style.scss */
+/* line 101, ../scss/style.scss */
 .game-container > .grid {
   height: 1000px;
 }
-/* line 86, ../scss/style.scss */
+/* line 104, ../scss/style.scss */
 .game-container > .controllers {
   min-height: 100px;
   padding: 30px 20px;
