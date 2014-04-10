@@ -1,8 +1,7 @@
 <?PHP
 require_once("Player.class.php");
-require_once("Ship.class.php");
 //require_once("Hunter.class.php");
-//require_once("Destroyer.class.php");
+require_once("Destroyer.class.php");
 
 final Class Game
 {
@@ -10,6 +9,7 @@ final Class Game
 	private $_p1;
 	private $_p2;
 	private $_grid;
+	private $_turn = 0;
 
 	const NORTH = 0;
 	const SOUTH = 2;
@@ -19,46 +19,54 @@ final Class Game
 	public function __construct($p1, $p2)
 	{
 		$ships_p1 = array(
-			new Destroyer (
-				0,
-				5,
-				0,
-				Game::EAST),
-			new Destroyer (
-				1,
-				5,
-				1,
-				Game::EAST),
+			new Destroyer (array(
+				'id' => 0,
+				'name' => 'the uncatchable',
+				'x' => 0,
+				'y' => 5,
+				'orientation' => Game::EAST
+			)),
+			new Destroyer (array(
+				'id' => 1,
+				'name' => 'the asdlaksj',
+				'x' => 4,
+				'y' => 7,
+				'orientation' => Game::EAST
+			))
 		);
 		$ships_p2 = array(
-			new Destroyer (
-				2,
-				140,
-				0,
-				Game::WEST),
-			new Destroyer (
-				3,
-				140,
-				1,
-				Game::WEST),
+			new Destroyer (array(
+				'id' => 2,
+				'name' => 'the asdasdsuncatchable',
+				'x' => 10,
+				'y' => 15,
+				'orientation' => Game::EAST
+			)),
+			new Destroyer (array(
+				'id' => 3,
+				'name' => 'the asdlakskadjlskdjsalj',
+				'x' => 14,
+				'y' => 17,
+				'orientation' => Game::EAST
+			))
 		);
 
 		$this->_listShip = array_merge($ships_p1, $ships_p2);
 		$this->_p1 = new Player($p1, $ships_p1, $this->_listShip);
 		$this->_p2 = new Player($p2, $ships_p2, $this->_listShip);
 
-		while (!winner($this->_p1, $this->_p2))
-		{
-			turn();
-			resetAll();
-		}
 		if (Game::$verbose == true)
 			print ("Game constructed" . PHP_EOL);
 	}
 
 	private function turn()
 	{
-		while ($this->_p1->play() || $this->_p2->player())
+		if ($this->_turn)
+			$this->_turn = 0;
+		else
+			$this->_turn = 1;
+		$this->_p1->play();
+		$this->_p2->play();
 			;
 	}
 
@@ -106,7 +114,11 @@ final Class Game
 	}
 
 	public function getListShip () {
-		return $this->_listShip;
+		$res = array();
+		foreach ($this->_listShip as $ship) {
+			array_push($res, $ship->getData());
+		}
+		return $res;
 	}
 
 }

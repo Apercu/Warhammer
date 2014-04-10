@@ -3,6 +3,7 @@
 abstract class Ship {
 
 	//use orderPP;
+	public static $verbose = false;
 
 	private $_id;
 	private $_name;
@@ -32,11 +33,10 @@ abstract class Ship {
 			$this->_coordX = $kwargs['x'];
 			$this->_coordY = $kwargs['y'];
 			$this->_orientation = $kwargs['orientation'];
-			$this->_weapons = $this->getWeapons;
 		}
 		else
 			die( "OMG YOU ARE A MORON" );
-		if (self::verbose)
+		if (self::$verbose)
 			print( $this . " constructed" . PHP_EOL );
 	}
 
@@ -45,7 +45,7 @@ abstract class Ship {
 	}
 
 	public function __destruct () {
-		if (self::verbose)
+		if (self::$verbose)
 			print( $this . " destructed" . PHP_EOL );
 	}
 
@@ -59,7 +59,7 @@ abstract class Ship {
 
 	public function setActivate( bool $f ){	$this->_activate = $f; }
 
-	abstract public function getWeapons();
+	abstract public function setWeapons();
 
 	public function play( array $allShips ){
 		$this->activate = True;
@@ -98,6 +98,16 @@ abstract class Ship {
 		$this->_boost = 0;
 		$this->_maxMove = 0;
 		$this->_activate = False;
+	}
+
+	public function getData () {
+		return array(
+			'id' => $this->_id,
+			'name' => $this->_name,
+			'x' => $this->_coordX,
+			'y' => $this->_coordY,
+			'orientation' => $this->_orientation
+		);
 	}
 
 }
