@@ -25,6 +25,11 @@ Class Laser implements IWeapon
         return $this->_ammunition;
     }
 
+	public function getId()
+	{
+		return $this->_id;
+	}
+
     public function shoot($listShips, $current)
     {
         $range = Game::rollDice();
@@ -34,7 +39,7 @@ Class Laser implements IWeapon
             $range = 80;
         else
             $range = 40;
-        else if ($range )
+
         if ($current->getSize() % 2 != 0)
         {
             if ($current->getOrientation() == Game::EAST)

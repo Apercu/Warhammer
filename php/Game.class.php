@@ -121,6 +121,23 @@ final Class Game
 		return $res;
 	}
 
+	private function getShipById($id)
+	{
+		foreach ($this->listShip as $ship)
+		{
+			if ($ship->getId() == $id)
+				return $ship;
+		}
+	}
+
+	public function setListShip ($array)
+	{
+		foreach ($array as $elem)
+		{
+			$ship = getShipById($elem['id']);
+			$ship->setData($elem);
+		}
+	}
 }
 
 ?>
