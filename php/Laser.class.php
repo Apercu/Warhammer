@@ -25,6 +25,11 @@ Class Laser implements IWeapon
         return $this->_ammunition;
     }
 
+	public function getId()
+	{
+		return $this->_id;
+	}
+
     public function shoot($listShips, $current)
     {
         $range = Game::rollDice();

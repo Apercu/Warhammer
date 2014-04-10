@@ -5,6 +5,12 @@ interface IWeapon
     private $_name;
     private $_ammunition;
 
-    function shoot();
+	public function shoot();
+
+    public function setAmmunition($a);
+
+	public function getAmmunition();
+
+	public function getId();
 }
 ?>
