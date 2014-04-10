@@ -1,5 +1,7 @@
 <?PHP
-
+require_once("Player.class.php");
+require_once("Hunter.class.php");
+require_once("Destroyer.class.php");
 final Class Game
 {
 	public static $verbose = false;
@@ -15,24 +17,24 @@ final Class Game
 	public function __construct($p1, $p2)
 	{
 		$ships_p1 = array(
-			new Ship_1 (
+			new Hunter (
 				0,
 				5,
 				0,
 				Game::EAST),
-			new Ship_2 (
+			new Destroyer (
 				1,
 				5,
 				1,
 				Game::EAST),
 		);
 		$ships_p2 = array(
-			new Ship_1 (
+			new Hunter (
 				2,
 				140,
 				0,
 				Game::WEST),
-			new Ship_2 (
+			new Destroyer (
 				3,
 				140,
 				1,
@@ -62,9 +64,9 @@ final Class Game
 		$ships = $this->_p1->getShips();
 		$ship2s = $this->_p2->getShips();
 		foreach ($ships as $ship)
-			$ship->setActivate(false);
+			$ship->reset();
 		foreach ($ships2 as $ship)
-			$ship->setActivate(false);
+			$ship->reset();
 	}
 
 	public static function rollDice()
