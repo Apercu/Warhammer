@@ -1,6 +1,7 @@
 <?php
 
 require_once("Ship.class.php");
+require_once("Laser.class.php");
 
 class Destroyer extends Ship {
 
@@ -16,6 +17,7 @@ class Destroyer extends Ship {
 	protected $_weapons;
 
 	public function __construct ( array $kwargs ){
+		$this->setWeapons();
 		parent::__construct($kwargs);
 	}
 

@@ -1,11 +1,11 @@
 <?PHP
 interface IWeapon
 {
-    private $_id;
+    /*private $_id;
     private $_name;
-    private $_ammunition;
+	private $_ammunition;*/
 
-	public function shoot();
+	public function shoot($listShips, $current);
 
     public function setAmmunition($a);
 

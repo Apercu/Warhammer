@@ -23,9 +23,9 @@ abstract class Ship {
 
 	public function __construct ( array $kwargs ){
 		if ( array_key_exists( 'id', $kwargs )
-		   	&& array_key_exists( 'name', $kwargs )
-		   	&& array_key_exists( 'x', $kwargs )
-		   	&& array_key_exists( 'y', $kwargs )
+			&& array_key_exists( 'name', $kwargs )
+			&& array_key_exists( 'x', $kwargs )
+			&& array_key_exists( 'y', $kwargs )
 			&& array_key_exists( 'orientation', $kwargs ) )
 		{
 			$this->_id = $kwargs['id'];
@@ -50,23 +50,23 @@ abstract class Ship {
 	}
 
 	public function getId(){return $this->_id; }
-	public function getPP(){return $this->_PP; }
-	public function getActivate(){return $this->_activate; }
-	public function getX(){return $this->_coordX; }
-	public function getY(){return $this->_coordY; }
-	public function getOrientation(){return $this->_orientation; }
-	public function getSize(){return $this->_size; }
+		public function getPP(){return $this->_PP; }
+		public function getActivate(){return $this->_activate; }
+		public function getX(){return $this->_coordX; }
+		public function getY(){return $this->_coordY; }
+		public function getOrientation(){return $this->_orientation; }
+		public function getSize(){return $this->_size; }
 
-	public function setPP($pp){$this->_PP = $pp; }
-	public function setX($x){$this->_coordX = $x; }
-	public function setY($y){$this->_coordY = $y; }
-	public function setOrientation($o){$this->_orientation = $o; }
+		public function setPP($pp){$this->_PP = $pp; }
+		public function setX($x){$this->_coordX = $x; }
+		public function setY($y){$this->_coordY = $y; }
+		public function setOrientation($o){$this->_orientation = $o; }
 
 
 
-	public function setActivate( bool $f ){	$this->_activate = $f; }
+		public function setActivate( bool $f ){	$this->_activate = $f; }
 
-	abstract public function setWeapons();
+		abstract public function setWeapons();
 
 	public function play( array $allShips ){
 		$this->activate = True;
@@ -132,7 +132,7 @@ abstract class Ship {
 			'name' => $this->_name,
 			'x' => $this->_coordX,
 			'y' => $this->_coordY,
-			'pp' => $this->_PP;
+			'pp' => $this->_PP,
 			'orientation' => $this->_orientation,
 			'weapons' => $weapons
 		);
