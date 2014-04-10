@@ -6,7 +6,7 @@ require_once("Laser.class.php");
 class Destroyer extends Ship {
 
 	protected $_size = array('x' => 4, 'y' =>4);
-	protected $_image = 0;
+	protected $_image;
 	protected $_lives = 10;
 	protected $_speed = 10;
 	protected $_shields = 0;
@@ -18,6 +18,7 @@ class Destroyer extends Ship {
 
 	public function __construct ( array $kwargs ){
 		$this->setWeapons();
+		$this->_image = $kwargs['img'];
 		parent::__construct($kwargs);
 	}
 

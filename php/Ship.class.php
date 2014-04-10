@@ -111,7 +111,7 @@ abstract class Ship {
 
 	private function getWeaponById($id)
 	{
-		foreach ($this->_wepons as $w)
+		foreach ($this->_weapons as $w)
 		{
 			if ($w->getId() == $id)
 				return $w;
@@ -134,6 +134,7 @@ abstract class Ship {
 			'y' => $this->_coordY,
 			'pp' => $this->_PP,
 			'orientation' => $this->_orientation,
+			'size' => $this->_size,
 			'weapons' => $weapons
 		);
 	}
@@ -146,7 +147,7 @@ abstract class Ship {
 		$this->setOrientation($array['orientation']);
 		foreach ($array['weapons'] as $w)
 		{
-			$wepon = getWeaponById($w['id']);
+			$weapon = $this->getWeaponById($w['id']);
 			$weapon->setAmmunition($w['ammunition']);
 		}
 	}

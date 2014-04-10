@@ -21,32 +21,36 @@ final Class Game
 		$ships_p1 = array(
 			new Destroyer (array(
 				'id' => 0,
-				'name' => 'the uncatchable',
+				'name' => 'The Uncatchable',
 				'x' => 0,
 				'y' => 5,
+				'img' => 'humans/ship_7.png',
 				'orientation' => Game::EAST
 			)),
 			new Destroyer (array(
 				'id' => 1,
-				'name' => 'the asdlaksj',
+				'name' => 'The Pacificator',
 				'x' => 4,
 				'y' => 7,
+				'img' => 'humans/ship_7.png',
 				'orientation' => Game::EAST
 			))
 		);
 		$ships_p2 = array(
 			new Destroyer (array(
 				'id' => 2,
-				'name' => 'the asdasdsuncatchable',
+				'name' => 'Aqwoulasdiloki',
 				'x' => 10,
 				'y' => 15,
+				'img' => 'aliens/ship_2.png',
 				'orientation' => Game::EAST
 			)),
 			new Destroyer (array(
 				'id' => 3,
-				'name' => 'the asdlakskadjlskdjsalj',
+				'name' => 'Olfaskhaudigart',
 				'x' => 14,
 				'y' => 17,
+				'img' => 'aliens/ship_2.png',
 				'orientation' => Game::EAST
 			))
 		);
@@ -123,7 +127,7 @@ final Class Game
 
 	private function getShipById($id)
 	{
-		foreach ($this->listShip as $ship)
+		foreach ($this->_listShip as $ship)
 		{
 			if ($ship->getId() == $id)
 				return $ship;
@@ -134,7 +138,7 @@ final Class Game
 	{
 		foreach ($array as $elem)
 		{
-			$ship = getShipById($elem['id']);
+			$ship = $this->getShipById($elem['id']);
 			$ship->setData($elem);
 		}
 	}
