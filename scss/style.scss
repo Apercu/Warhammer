@@ -1,5 +1,7 @@
 @import "compass/css3";
 @import "compass/reset";
+@import "compass/css3/transform";
+@import "compass/css3/user-interface";
 @import "compass/css3/box-shadow";
 @import "compass/css3/font-face";
 
@@ -8,6 +10,7 @@
 * {
 	outline: none;
 	box-sizing: border-box;
+	@include user-select(none);
 }
 
 html, body {
