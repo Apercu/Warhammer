@@ -80,13 +80,33 @@ html, body {
   width: 80%;
   padding: 50px;
   margin: 0 auto;
+  text-align: center;
 }
-/* line 19, ../scss/style.scss */
+/* line 20, ../scss/style.scss */
 .intro a {
   width: 100%;
   height: 200px;
-  background: red;
+  background-color: #1e6bce;
+  padding: 20px 500px;
+  text-decoration: none;
+  font-size: 30px;
+  color: white;
   -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 2px 5px;
   -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 2px 5px;
   box-shadow: rgba(0, 0, 0, 0.3) 0 2px 5px;
+  -webkit-border-radius: 4px 4px;
+  -moz-border-radius: 4px / 4px;
+  border-radius: 4px / 4px;
+  -webkit-transition-property: background-color;
+  -moz-transition-property: background-color;
+  -o-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: 100ms;
+  -moz-transition-duration: 100ms;
+  -o-transition-duration: 100ms;
+  transition-duration: 100ms;
+}
+/* line 32, ../scss/style.scss */
+.intro a:hover {
+  background-color: #287CE9;
 }
