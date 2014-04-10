@@ -1,4 +1,7 @@
 <div class="game-container">
-	{{ data | json }}
-	<button ng-click="finishTurn()">j'ai fini mon tour</button>
+	<div class="grid">{{ data | json }}</div>
+	<hr class="custom">
+	<div class="controllers">
+		<button class="custom" ng-click="finishTurn()">j'ai fini mon tour</button>
+	</div>
 </div>
