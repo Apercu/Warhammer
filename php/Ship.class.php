@@ -1,10 +1,8 @@
 <?php
 
-require ( "LOADS OF MERDE.merde" );
+abstract class Ship {
 
-class Ship {
-
-	use orderPP;
+	//use orderPP;
 
 	private $_id;
 	private $_name;
@@ -20,7 +18,7 @@ class Ship {
 	protected $_activate = False;
 	protected $_boost = 0;
 	protected $_maxMove = 0;
-	protected array $_weapons;
+	protected $_weapons;
 
 	public function __construct ( array $kwargs ){
 		if ( array_key_exists( 'id', $kwargs )
@@ -51,9 +49,8 @@ class Ship {
 			print( $this . " destructed" . PHP_EOL );
 	}
 
-	public function getId(){return $this->_id; ;
+	public function getId(){return $this->_id; }
 	public function getPP(){return $this->_PP; }
-	public function getWeapons(){return $this->_weapons; }
 	public function getActivate(){return $this->_activate; }
 	public function getX(){return $this->_coordX; }
 	public function getY(){return $this->_coordY; }
@@ -62,14 +59,14 @@ class Ship {
 
 	public function setActivate( bool $f ){	$this->_activate = $f; }
 
-	abstract private function getWeapons();
+	abstract public function getWeapons();
 
 	public function play( array $allShips ){
 		$this->activate = True;
 		$this->order();
 		$this->move();
 		$this->shoot( $allShips );
-	};
+	}
 
 	private function order( ){
 		$res = $this->PP_to_send($this);
@@ -88,7 +85,7 @@ class Ship {
 	}
 
 	private function shoot( array $allShips ) {
-		$res = $this->
+		//$res = $this->
 		foreach ($this->_weapons as $gun)
 		{
 			if ( $gun->getAmmunition > 0 )
