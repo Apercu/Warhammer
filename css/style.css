@@ -93,7 +93,7 @@ hr.custom {
 }
 
 /* line 31, ../scss/style.scss */
-button.custom, i.custom {
+i.custom {
   background-color: #1e6bce;
   -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 2px 5px;
   -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 2px 5px;
@@ -119,7 +119,7 @@ button.custom, i.custom {
   min-height: 30px;
 }
 /* line 43, ../scss/style.scss */
-button.custom:hover, i.custom:hover {
+i.custom:hover {
   background-color: #287CE9;
 }
 
