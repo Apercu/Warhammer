@@ -97,7 +97,7 @@ html, body {
 .intro .launch {
   height: 200px;
   background-color: #1e6bce;
-  padding: 20px 50px;
+  padding: 20px 50px 10px 50px;
   text-decoration: none;
   font-size: 40px;
   color: white;
