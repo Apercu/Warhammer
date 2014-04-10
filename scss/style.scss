@@ -28,7 +28,7 @@ hr.custom {
 	box-shadow: rgba(0,0,0,.1) 0 2px 0;
 }
 
-button.custom {
+button.custom, i.custom {
 	background-color: rgb(30, 107, 206);
 	@include box-shadow(rgba(black, .3) 0 2px 5px);
 	@include border-radius(4px, 4px);
@@ -39,6 +39,7 @@ button.custom {
 	color: white;
 	cursor: pointer;
 	padding: 4px 10px;
+	min-height: 30px;
 	&:hover {
 		background-color: #287CE9;
 	}

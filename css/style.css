@@ -93,7 +93,7 @@ hr.custom {
 }
 
 /* line 31, ../scss/style.scss */
-button.custom {
+button.custom, i.custom {
   background-color: #1e6bce;
   -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 2px 5px;
   -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 2px 5px;
@@ -116,26 +116,27 @@ button.custom {
   color: white;
   cursor: pointer;
   padding: 4px 10px;
+  min-height: 30px;
 }
-/* line 42, ../scss/style.scss */
-button.custom:hover {
+/* line 43, ../scss/style.scss */
+button.custom:hover, i.custom:hover {
   background-color: #287CE9;
 }
 
-/* line 47, ../scss/style.scss */
+/* line 48, ../scss/style.scss */
 .intro {
   padding: 50px;
   margin: 0 auto;
   text-align: center;
   font-family: "Coalition";
 }
-/* line 52, ../scss/style.scss */
+/* line 53, ../scss/style.scss */
 .intro .heading {
   color: #F5F247;
   font-size: 50px;
   margin-bottom: 50px;
 }
-/* line 57, ../scss/style.scss */
+/* line 58, ../scss/style.scss */
 .intro .launch {
   height: 200px;
   background-color: #1e6bce;
@@ -158,12 +159,12 @@ button.custom:hover {
   -o-transition-duration: 100ms;
   transition-duration: 100ms;
 }
-/* line 68, ../scss/style.scss */
+/* line 69, ../scss/style.scss */
 .intro .launch:hover {
   background-color: #287CE9;
 }
 
-/* line 74, ../scss/style.scss */
+/* line 75, ../scss/style.scss */
 .north {
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -172,7 +173,7 @@ button.custom:hover {
   transform: rotate(0deg);
 }
 
-/* line 78, ../scss/style.scss */
+/* line 79, ../scss/style.scss */
 .south {
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
@@ -181,7 +182,7 @@ button.custom:hover {
   transform: rotate(180deg);
 }
 
-/* line 82, ../scss/style.scss */
+/* line 83, ../scss/style.scss */
 .west {
   -webkit-transform: rotate(260deg);
   -moz-transform: rotate(260deg);
@@ -190,7 +191,7 @@ button.custom:hover {
   transform: rotate(260deg);
 }
 
-/* line 86, ../scss/style.scss */
+/* line 87, ../scss/style.scss */
 .east {
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
@@ -199,7 +200,7 @@ button.custom:hover {
   transform: rotate(90deg);
 }
 
-/* line 90, ../scss/style.scss */
+/* line 91, ../scss/style.scss */
 .game-container {
   -webkit-border-radius: 4px 4px;
   -moz-border-radius: 4px / 4px;
@@ -214,11 +215,11 @@ button.custom:hover {
   right: 0;
   margin: auto;
 }
-/* line 101, ../scss/style.scss */
+/* line 102, ../scss/style.scss */
 .game-container > .grid {
   height: 1000px;
 }
-/* line 104, ../scss/style.scss */
+/* line 105, ../scss/style.scss */
 .game-container > .controllers {
   min-height: 100px;
   padding: 30px 20px;
