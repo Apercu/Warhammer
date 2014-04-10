@@ -14,9 +14,11 @@ module.exports = function(grunt) {
 			}
 		},
 		compass: {
-			options: {
-				sassDir: 'scss',
-				cssDir: 'css'
+			dist: {
+				options: {
+					sassDir: 'scss',
+					cssDir: 'css'
+				}
 			}
 		}
 	});

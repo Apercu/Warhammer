@@ -19,7 +19,7 @@ html, body {
 	a {
 		width: 100%;
 		height: 200px;
-		background: blue;
+		background: red;
 		@include box-shadow(rgba(black, .3) 0 2px 5px);
 	}
 }
