@@ -5,20 +5,8 @@
 		<link rel="stylesheet" href="css/style.css">
 		<script src="bower_components/angular/angular.js"></script>
 	</head>
-	<body>
-		<h1>Warhammer - The ultimate spaceship purposal</h1>
-		<div class="intro">
-			<a href="/game">Launch Game</a>
-		</div>
-		<div class="game-container">
-			<table>
-				<tr ng-repeat="i in getNumCols()">
-					<td ng-repeat="y in getNumRows()">
-						toto
-					</td>
-				</tr>
-			</table>
-		</div>
+	<body ng-app="war">
+		<div ng-view></div>
 		<script src="//localhost:35729/livereload.js"></script>
 	</body>
 </html>
