@@ -2,6 +2,8 @@
 	<input type="text" ng-model="text"><button ng-click="sendData()">envoyer</button>
 	<hr class="custom">
 	<div class="controllers">
-		<button class="custom" ng-click="finishTurn()">j'ai fini mon tour</button>
+		<i class="icon-undo custom" ng-click="turnLeft()"> Gauche</i>
+		<i class="icon-redo custom" ng-click="turnRight()"> Droite</i>
+		<i class="icon-disk custom" ng-click="finishTurn()"> Fini !</i>
 	</div>
 </div>

@@ -27,7 +27,7 @@ hr.custom {
 	box-shadow: rgba(0,0,0,.1) 0 2px 0;
 }
 
-button.custom {
+i.custom {
 	background-color: rgb(30, 107, 206);
 	@include box-shadow(rgba(black, .3) 0 2px 5px);
 	@include border-radius(4px, 4px);
@@ -36,6 +36,9 @@ button.custom {
 	@include appearance(none);
 	border: 0;
 	color: white;
+	cursor: pointer;
+	padding: 4px 10px;
+	min-height: 30px;
 	&:hover {
 		background-color: #287CE9;
 	}
@@ -66,6 +69,22 @@ button.custom {
 			background-color: #287CE9;
 		}
 	}
+}
+
+.north {
+	@include rotate(0deg);
+}
+
+.south {
+	@include rotate(180deg);
+}
+
+.west {
+	@include rotate(260deg);
+}
+
+.east {
+	@include rotate(90deg);
 }
 
 .game-container {
