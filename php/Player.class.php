@@ -1,20 +1,23 @@
 <?php
 
-class Player
+final class Player
 {
 	public static	$verbose = FALSE;
 	private			$_name;
 	private			$_ships = array();
+	private			$_all_ships = array();
 
-	public function		__construct($name_given, array $kwarg)
+	public function		__construct($name_given, array $ships_given, array $all_ships_given)
 	{
 		if (!empty($name_given))
 		{
 			$this->_name = $name_given;
-			if (!empty($kwarg))
+			if (!empty($ships_given) && !empty($all_ships_given))
 			{
-				foreach ($kwarg as $elem)
+				foreach ($ships_given as $elem)
 					$this->_ships[] = $elem;
+				foreach ($all_ships_given as $elem)
+					$this->_all_ships[] = $elem;
 			}
 			else
 			{
@@ -75,7 +78,7 @@ class Player
 		if (canPlay() === TRUE)
 		{
 			$id_ship = selectShip();
-			$this->_ships[$id_ships]->play();
+			$this->_ships[$id_ships]->play($this->_all_ships);
 			if (self::$verbose === TRUE)
 				print($this->_name." can play.");
 			return (TRUE);
