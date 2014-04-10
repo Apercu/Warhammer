@@ -10,4 +10,16 @@ angular.module('war').controller('GameCtrl', function ($scope, $http, $timeout) 
 		});
 	};
 
+	$scope.turnRight = function () {
+		angular.element.post('/php/turning.php', { action : 'turnRight', idShip : 1 }.then(function(response) {
+			console.log(response);
+		});
+	};
+
+	$scope.turnLeft = function () {
+		angular.element.post('/php/turning.php', { action : 'turnLeft', idShip : 1 }.then(function(response) {
+			console.log(response);
+		});
+	};
+
 });

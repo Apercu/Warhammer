@@ -2,8 +2,8 @@
 	<div class="grid">{{ data | json }}</div>
 	<hr class="custom">
 	<div class="controllers">
-		<i class="icon-undo custom"> Gauche</i>
-		<i class="icon-redo custom"> Droite</i>
+		<i class="icon-undo custom" ng-click="turnLeft()"> Gauche</i>
+		<i class="icon-redo custom" ng-click="turnRight()"> Droite</i>
 		<i class="icon-disk custom" ng-click="finishTurn()"> Fini !</i>
 	</div>
 </div>
