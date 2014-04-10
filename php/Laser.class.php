@@ -1,9 +1,12 @@
 <?PHP
+
+include_once('IWeapon.class.php');
+
 Class Laser implements IWeapon
 {
     private $_id;
     private $_name;
-    private $_ammunition;
+    private $_ammunition = 0;
     private $_weapon_position;
     public static $verbose = False;
 
@@ -11,7 +14,7 @@ Class Laser implements IWeapon
     {
         $this->_id = $id;
         $this->_name = "laser";
-        if (self::verbose)
+        if (self::$verbose)
             print("Laser instance constructed");
     }
 
@@ -45,22 +48,22 @@ Class Laser implements IWeapon
             if ($current->getOrientation() == Game::EAST)
                 $this->_weapon_position = array($current->getX() + $current->getSize() - 1, $current->getY() + round($current->getSize() / 2) - 1);
             else if ($current->getOrientation() == Game::WEST)
-                $this->_weapon_position = array($current->getX(), $current->getY() + round($current->getSize() / 2) - 1)
+                $this->_weapon_position = array($current->getX(), $current->getY() + round($current->getSize() / 2) - 1);
             else if ($current->getOrientation() == Game::SOUTH)
-                $this->_weapon_position = array($current->getX() + round($current->getSize() / 2) - 1, $current->getY() + $current->getSize() - 1)
+                $this->_weapon_position = array($current->getX() + round($current->getSize() / 2) - 1, $current->getY() + $current->getSize() - 1);
             else if ($current->getOrientation() == Game::NORTH)
-                $this->_weapon_position = array($current->getX() + round($current->getSize() / 2) - 1, $current->getY())
+                $this->_weapon_position = array($current->getX() + round($current->getSize() / 2) - 1, $current->getY());
         }
         else
         {
             if ($current->getOrientation() == Game::EAST)
                 $this->_weapon_position = array($current->getX() + $current->getSize() - 1, $current->getY() + $current->getSize() / 2);
             else if ($current->getOrientation() == Game::WEST)
-                $this->_weapon_position = array($current->getX(), $current->getY() + $current->getSize() / 2 - 1)
+                $this->_weapon_position = array($current->getX(), $current->getY() + $current->getSize() / 2 - 1);
             else if ($current->getOrientation() == Game::SOUTH)
-                $this->_weapon_position = array($current->getX() + $current->getSize() / 2 - 1, $current->getY() + $current->getSize() - 1)
+                $this->_weapon_position = array($current->getX() + $current->getSize() / 2 - 1, $current->getY() + $current->getSize() - 1);
             else if ($current->getOrientation() == Game::NORTH)
-                $this->_weapon_position = array($current->getX() + $current->getSize() / 2 - 1, $current->getY())
+                $this->_weapon_position = array($current->getX() + $current->getSize() / 2 - 1, $current->getY());
         }
         $i = 0;
         $laserx = $this->_weapon_position[0];
