@@ -58,17 +58,37 @@ Class Laser implements IWeapon
                 $this->_weapon_position = array($current->getX() + $current->getSize() / 2 - 1, $current->getY())
         }
         $i = 0;
-        if ($current->getOrientation() == Game::EAST)
+        $laserx = $this->_weapon_position[0];
+        $lasery = $this->_weapon_position[1];
+        while ($i < $range)
         {
-            while ($i < $range)
+            if ($current->getOrientation() == Game::EAST)
+                $laserx++;
+            else if ($current->getOrientation() == Game::WEST)
+                $laserx--;
+            else if ($current->getOrientation() == Game::SOUTH)
+                $lasery++;
+            else if ($current->getOrientation() == Game::NORTH)
+                $lasery--;
+            foreach ($listShips as $ships)
             {
-                $this->_weapon_position[0];
-                foreach ($listShips as $ships)
+                $w = 0;
+                while ($w < $ships->getSize())
                 {
-
+                    $h = 0;
+                    while ($h < $ships->getSize())
+                    {
+                        if ($ships->getX() + $w == $laserx && $ships->getY() + $h == $lasery)
+                        {
+                            $ships->setLives($ships->getLives() - 3);
+                            return ;
+                        }
+                        $h++;
+                    }
+                    $w++;
                 }
-                $i++;
             }
+            $i++;
         }
     }
 }
